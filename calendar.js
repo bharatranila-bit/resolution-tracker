@@ -4,10 +4,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const daysContainer = document.getElementById('days-container');
     const saveButton = document.getElementById('save-button');
     
+    if (!currentUser) {
+        // If no user is logged in, redirect to the name input page
+        window.location.href = 'index.html';
+        return;
+    }
+
     // Display user's name
     userNameElement.textContent = currentUser;
 
-    // Load previous progress from localStorage
+    // Load previous progress from localStorage (or initialize a new array if none)
     let userProgress = JSON.parse(localStorage.getItem(currentUser)) || Array(365).fill(false);
 
     // Create calendar boxes (1 to 365)
