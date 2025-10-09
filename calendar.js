@@ -4,51 +4,15 @@ darkModeToggle.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
 });
 
-// Handle Login Page Logic
-const loginPage = document.getElementById('login-page');
+// Handle Register Page Logic
 const registerPage = document.getElementById('register-page');
 const calendarPage = document.getElementById('calendar-page');
 const userNameSpan = document.getElementById('user-name');
 const challengeMessage = document.getElementById('challenge-message');
 const remainingDaysDisplay = document.getElementById('remaining-days');
-const loginBtn = document.getElementById('login-btn');
-const registerLink = document.getElementById('register-link');
-const loginLink = document.getElementById('login-link');
-const usernameInput = document.getElementById('username');
-const passwordInput = document.getElementById('password');
+const registerBtn = document.getElementById('register-btn');
 const newUsernameInput = document.getElementById('new-username');
 const newPasswordInput = document.getElementById('new-password');
-
-// Handle Register Page Logic
-const registerBtn = document.getElementById('register-btn');
-
-// Toggle between login and register pages
-registerLink.addEventListener('click', () => {
-    loginPage.style.display = 'none';
-    registerPage.style.display = 'block';
-});
-
-loginLink.addEventListener('click', () => {
-    registerPage.style.display = 'none';
-    loginPage.style.display = 'block';
-});
-
-// Function to handle login logic
-loginBtn.addEventListener('click', () => {
-    const username = usernameInput.value;
-    const password = passwordInput.value;
-
-    const storedPassword = localStorage.getItem(username);
-
-    if (storedPassword && storedPassword === password) {
-        loginPage.style.display = 'none';
-        calendarPage.style.display = 'block';
-        userNameSpan.textContent = username;
-        loadUserProgress(username);
-    } else {
-        alert('Invalid username or password');
-    }
-});
 
 // Function to handle registration logic
 registerBtn.addEventListener('click', () => {
@@ -62,7 +26,9 @@ registerBtn.addEventListener('click', () => {
             localStorage.setItem(newUsername, newPassword);
             alert('Registration successful! You can now log in.');
             registerPage.style.display = 'none';
-            loginPage.style.display = 'block';
+            calendarPage.style.display = 'block';
+            userNameSpan.textContent = newUsername;
+            loadUserProgress(newUsername); // Load user progress after registration
         }
     } else {
         alert('Please fill out both fields!');
