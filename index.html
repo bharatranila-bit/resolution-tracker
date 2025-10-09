@@ -3,17 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resolution Tracker</title>
+    <title>Resolution Tracker - Calendar</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="name-page">
-        <h1>Enter Your Name</h1>
-        <input type="text" id="name-input" placeholder="Enter your name" />
-        <button id="next-button">Next</button>
-        <p id="error-message" style="color: red; display: none;">This name is already taken. Please enter a new one.</p>
+
+    <!-- Dark Mode Toggle Button -->
+    <button id="dark-mode-toggle">Toggle Dark Mode</button>
+
+    <!-- Register Page (Directly Shown on Page Load) -->
+    <div id="register-page">
+        <h1>Register</h1>
+        <input type="text" id="new-username" placeholder="Enter Username" />
+        <input type="password" id="new-password" placeholder="Enter Password" />
+        <button id="register-btn">Register</button>
     </div>
 
-    <script src="script.js"></script>
+    <!-- Calendar Page (Visible only after successful registration) -->
+    <div id="calendar-page" style="display: none;">
+        <h1>Welcome, <span id="user-name"></span>!</h1>
+        <p id="challenge-message"></p> <!-- New Welcome Message -->
+        <p id="remaining-days">Remaining Days: 365</p> <!-- Remaining Days -->
+        <div id="progress-bar"><span></span></div>
+        <div id="days-container"></div>
+        <button id="save-button">Save Progress</button>
+    </div>
+
+    <script src="calendar.js"></script>
+
 </body>
 </html>
