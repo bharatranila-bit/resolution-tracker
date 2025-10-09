@@ -10,7 +10,7 @@ const registerPage = document.getElementById('register-page');
 const calendarPage = document.getElementById('calendar-page');
 const userNameSpan = document.getElementById('user-name');
 const challengeMessage = document.getElementById('challenge-message');
-const progressCounter = document.getElementById('progress-counter');
+const remainingDaysDisplay = document.getElementById('remaining-days');
 const loginBtn = document.getElementById('login-btn');
 const registerLink = document.getElementById('register-link');
 const loginLink = document.getElementById('login-link');
@@ -122,8 +122,9 @@ function updateProgress(userProgress) {
     progressBar.style.width = `${progress}%`;
     progressBar.innerHTML = `${Math.round(progress)}%`;
 
-    // Update the progress counter (Days Completed)
-    progressCounter.innerText = `Days Completed: ${completedDays}/365`;
+    // Update the remaining days counter
+    const remainingDays = 365 - completedDays;
+    remainingDaysDisplay.innerText = `Remaining Days: ${remainingDays}`;
 
     // Update the welcome message
     challengeMessage.innerText = `Welcome to your 365 days hard challenge! Keep pushing towards your goal!`;
