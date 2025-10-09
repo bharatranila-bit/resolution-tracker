@@ -98,8 +98,23 @@ function toggleDayStatus(index, dayBox, userProgress) {
     saveProgress(userProgress);
 }
 
-// Save progress in localStorage
+// Save progress in localStorage and show success message
 function saveProgress(userProgress) {
     const currentUser = userNameSpan.textContent;
     localStorage.setItem(`${currentUser}_progress`, JSON.stringify(userProgress));
+
+    // Update progress bar after saving
+    updateProgress(userProgress);
+
+    // Show success message when progress is saved
+    alert("Thank you! Your progress has been saved.");
+}
+
+// Update Progress Bar based on Completed Days
+function updateProgress(userProgress) {
+    const completedDays = userProgress.filter(day => day).length;
+    const progress = (completedDays / 365) * 100;
+    const progressBar = document.getElementById('progress-bar');
+    progressBar.style.width = `${progress}%`;
+    progressBar.innerHTML = `${Math.round(progress)}%`;
 }
