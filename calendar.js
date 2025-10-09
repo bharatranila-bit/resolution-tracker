@@ -9,6 +9,8 @@ const loginPage = document.getElementById('login-page');
 const registerPage = document.getElementById('register-page');
 const calendarPage = document.getElementById('calendar-page');
 const userNameSpan = document.getElementById('user-name');
+const challengeMessage = document.getElementById('challenge-message');
+const progressCounter = document.getElementById('progress-counter');
 const loginBtn = document.getElementById('login-btn');
 const registerLink = document.getElementById('register-link');
 const loginLink = document.getElementById('login-link');
@@ -78,6 +80,7 @@ function displayCalendar(userProgress) {
     const daysContainer = document.getElementById('days-container');
     daysContainer.innerHTML = ''; // Clear previous days
 
+    // Display 365 days
     for (let i = 0; i < 365; i++) {
         const dayBox = document.createElement('div');
         dayBox.classList.add('day-box');
@@ -89,6 +92,7 @@ function displayCalendar(userProgress) {
     }
 
     document.getElementById('save-button').style.display = 'block';
+    updateProgress(userProgress); // Update the progress and counter
 }
 
 // Toggle Day Status and Update Progress
@@ -103,7 +107,7 @@ function saveProgress(userProgress) {
     const currentUser = userNameSpan.textContent;
     localStorage.setItem(`${currentUser}_progress`, JSON.stringify(userProgress));
 
-    // Update progress bar after saving
+    // Update progress bar and counter after saving
     updateProgress(userProgress);
 
     // Show success message when progress is saved
@@ -117,4 +121,10 @@ function updateProgress(userProgress) {
     const progressBar = document.getElementById('progress-bar');
     progressBar.style.width = `${progress}%`;
     progressBar.innerHTML = `${Math.round(progress)}%`;
+
+    // Update the progress counter (Days Completed)
+    progressCounter.innerText = `Days Completed: ${completedDays}/365`;
+
+    // Update the welcome message
+    challengeMessage.innerText = `Welcome to your 365 days hard challenge! Keep pushing towards your goal!`;
 }
