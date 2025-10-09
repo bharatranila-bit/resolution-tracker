@@ -1,15 +1,10 @@
+/* Basic styles for body and calendar page */
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     color: #333;
     margin: 0;
     padding: 0;
-}
-
-#calendar-page {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
 }
 
 button {
@@ -84,10 +79,4 @@ button#dark-mode-toggle:hover {
     justify-content: center;
     align-items: center;
     font-size: 12px;
-}
-
-#myChart {
-    margin-top: 40px;
-    max-width: 500px;
-    margin: 0 auto;
 }
