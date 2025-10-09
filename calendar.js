@@ -4,7 +4,7 @@ darkModeToggle.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
 });
 
-// Handle Register Page Logic
+// Register Page Logic
 const registerPage = document.getElementById('register-page');
 const calendarPage = document.getElementById('calendar-page');
 const userNameSpan = document.getElementById('user-name');
@@ -23,10 +23,10 @@ registerBtn.addEventListener('click', () => {
         if (localStorage.getItem(newUsername)) {
             alert('Username already taken!');
         } else {
-            localStorage.setItem(newUsername, newPassword);
+            localStorage.setItem(newUsername, newPassword);  // Save the user's credentials in localStorage
             alert('Registration successful! You can now log in.');
             registerPage.style.display = 'none';  // Hide registration page
-            calendarPage.style.display = 'block'; // Show calendar page
+            calendarPage.style.display = 'block'; // Show calendar page after registration
             userNameSpan.textContent = newUsername;
             loadUserProgress(newUsername); // Load user progress after registration
         }
