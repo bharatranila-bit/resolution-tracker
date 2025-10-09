@@ -17,15 +17,11 @@ document.addEventListener('DOMContentLoaded', function() {
         // Check if the name is already taken in localStorage
         const existingUsers = JSON.parse(localStorage.getItem('users')) || [];
         if (existingUsers.includes(name)) {
-            errorMessage.style.display = 'block';
+            errorMessage.style.display = 'none'; // Hide error message
+            localStorage.setItem('currentUser', name); // Store the current user name
+            window.location.href = 'calendar.html'; // Redirect to calendar page
         } else {
-            // Save new name and move to the calendar page
-            existingUsers.push(name);
-            localStorage.setItem('users', JSON.stringify(existingUsers));
-
-            // Redirect to the next page
-            localStorage.setItem('currentUser', name);
-            window.location.href = 'calendar.html';
+            errorMessage.style.display = 'block'; // Show error message
         }
     });
 });
