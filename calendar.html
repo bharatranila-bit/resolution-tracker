@@ -11,17 +11,8 @@
     <!-- Dark Mode Toggle Button -->
     <button id="dark-mode-toggle">Toggle Dark Mode</button>
 
-    <!-- Login Page -->
-    <div id="login-page">
-        <h1>Login</h1>
-        <input type="text" id="username" placeholder="Enter Username" />
-        <input type="password" id="password" placeholder="Enter Password" />
-        <button id="login-btn">Login</button>
-        <p>Don't have an account? <a href="#" id="register-link">Register Here</a></p>
-    </div>
-
     <!-- Register Page -->
-    <div id="register-page" style="display: none;">
+    <div id="register-page">
         <h1>Register</h1>
         <input type="text" id="new-username" placeholder="Enter Username" />
         <input type="password" id="new-password" placeholder="Enter Password" />
@@ -29,7 +20,7 @@
         <p>Already have an account? <a href="#" id="login-link">Login Here</a></p>
     </div>
 
-    <!-- Calendar Page -->
+    <!-- Calendar Page (only visible after login) -->
     <div id="calendar-page" style="display: none;">
         <h1>Welcome, <span id="user-name"></span>!</h1>
         <p id="challenge-message"></p> <!-- New Welcome Message -->
