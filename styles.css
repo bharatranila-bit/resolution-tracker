@@ -46,8 +46,8 @@ body.dark-mode {
 }
 
 #calendar-page {
-    background-color: #1d1d1d;
-    color: #f0f0f0;
+    background-color: #ffffff; /* Set to white (light) background */
+    color: #333;
 }
 
 button#dark-mode-toggle {
@@ -79,4 +79,14 @@ button#dark-mode-toggle:hover {
     justify-content: center;
     align-items: center;
     font-size: 12px;
+}
+
+#challenge-message {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+#progress-counter {
+    font-size: 16px;
+    margin-top: 10px;
 }
