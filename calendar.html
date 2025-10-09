@@ -11,28 +11,29 @@
     <!-- Dark Mode Toggle Button -->
     <button id="dark-mode-toggle">Toggle Dark Mode</button>
 
-    <div id="calendar-page">
-        <!-- User name input and name checking -->
-        <h1>Enter Your Name</h1>
-        <input type="text" id="user-name" placeholder="Enter your name" />
-        <button id="next-btn">Next</button>
-
-        <!-- Progress Bar -->
-        <div id="progress-bar">
-            <span></span>
-        </div>
-
-        <!-- Days Container (1 to 365 grid) -->
-        <div id="days-container"></div>
-
-        <!-- Save Progress Button -->
-        <button id="save-button" style="display: none;">Save Progress</button>
+    <div id="login-page">
+        <h1>Login</h1>
+        <input type="text" id="username" placeholder="Enter Username" />
+        <input type="password" id="password" placeholder="Enter Password" />
+        <button id="login-btn">Login</button>
+        <p>Don't have an account? <a href="#" id="register-link">Register Here</a></p>
     </div>
 
-    <!-- Chart.js Canvas for the Progress Graph (Optional) -->
-    <canvas id="myChart" width="400" height="200"></canvas>
+    <div id="register-page" style="display: none;">
+        <h1>Register</h1>
+        <input type="text" id="new-username" placeholder="Enter Username" />
+        <input type="password" id="new-password" placeholder="Enter Password" />
+        <button id="register-btn">Register</button>
+        <p>Already have an account? <a href="#" id="login-link">Login Here</a></p>
+    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <div id="calendar-page" style="display: none;">
+        <h1>Welcome, <span id="user-name"></span>!</h1>
+        <div id="progress-bar"><span></span></div>
+        <div id="days-container"></div>
+        <button id="save-button">Save Progress</button>
+    </div>
+
     <script src="calendar.js"></script>
 
 </body>
