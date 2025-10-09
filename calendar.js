@@ -25,8 +25,8 @@ registerBtn.addEventListener('click', () => {
         } else {
             localStorage.setItem(newUsername, newPassword);
             alert('Registration successful! You can now log in.');
-            registerPage.style.display = 'none';
-            calendarPage.style.display = 'block';
+            registerPage.style.display = 'none';  // Hide registration page
+            calendarPage.style.display = 'block'; // Show calendar page
             userNameSpan.textContent = newUsername;
             loadUserProgress(newUsername); // Load user progress after registration
         }
