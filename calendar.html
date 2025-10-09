@@ -12,13 +12,10 @@
     <button id="dark-mode-toggle">Toggle Dark Mode</button>
 
     <div id="calendar-page">
-        <h1>Welcome, <span id="user-name"></span>!</h1>
-
-        <!-- Start Date Input -->
-        <div class="container">
-            <label for="start-date">Select Start Date:</label>
-            <input type="date" id="start-date" />
-        </div>
+        <!-- User name input and name checking -->
+        <h1>Enter Your Name</h1>
+        <input type="text" id="user-name" placeholder="Enter your name" />
+        <button id="next-btn">Next</button>
 
         <!-- Progress Bar -->
         <div id="progress-bar">
@@ -29,7 +26,7 @@
         <div id="days-container"></div>
 
         <!-- Save Progress Button -->
-        <button id="save-button">Save Progress</button>
+        <button id="save-button" style="display: none;">Save Progress</button>
     </div>
 
     <!-- Chart.js Canvas for the Progress Graph (Optional) -->
